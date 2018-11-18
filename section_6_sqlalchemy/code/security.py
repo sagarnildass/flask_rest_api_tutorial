@@ -1,6 +1,6 @@
 #this safely compares two string regardless of their encodings
 from werkzeug.security import safe_str_cmp
-from resources.user import User
+from model.user import UserModel
 
 #users = [
 #    User(1, 'sagarnildass', 'sagar')
@@ -31,7 +31,7 @@ userid_mapping = {1:{
 def authenticate(username, password):
 
     #now using the new method which we created in the User class.
-    user = User.find_by_username(username)
+    user = UserModel.find_by_username(username)
     if user and safe_str_cmp(user.password,password):
         return user
 
@@ -39,4 +39,4 @@ def authenticate(username, password):
 #userid from that payload
 def identity(payload):
     user_id = payload['identity']
-    return User.find_by_id(user_id)
+    return UserModel.find_by_id(user_id)
