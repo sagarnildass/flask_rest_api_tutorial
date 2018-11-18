@@ -1,6 +1,6 @@
 #this safely compares two string regardless of their encodings
 from werkzeug.security import safe_str_cmp
-from user import User
+from resources.user import User
 
 #users = [
 #    User(1, 'sagarnildass', 'sagar')
