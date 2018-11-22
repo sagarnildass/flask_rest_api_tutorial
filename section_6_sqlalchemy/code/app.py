@@ -6,6 +6,8 @@ from resources.user import UserRegister
 from resources.item import Item, ItemList
 
 app = Flask(__name__)
+#This turns off flask's SQLAlchemy tracker but not SqlAlchemy's tracker
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] =  False
 #This should be private
 app.secret_key = 'sagar'
 api = Api(app)
