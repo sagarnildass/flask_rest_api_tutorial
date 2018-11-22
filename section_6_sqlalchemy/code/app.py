@@ -23,5 +23,7 @@ api.add_resource(UserRegister, '/register')
 #we don't run the app. So whatever, we don't wanna run on import goes
 #under this __name__ = '__main__' block
 if __name__ == '__main__':
+    from db import db
+    db.init_app(app)
 #run the app, debug=True gives nice error messages
     app.run(port=5000, debug=True)
