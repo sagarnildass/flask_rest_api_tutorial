@@ -8,6 +8,8 @@ from resources.item import Item, ItemList
 app = Flask(__name__)
 #This turns off flask's SQLAlchemy tracker but not SqlAlchemy's tracker
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] =  False
+#telling where the db file resides
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 #This should be private
 app.secret_key = 'sagar'
 api = Api(app)
